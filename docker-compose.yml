@@ -1,0 +1,48 @@
+version: '3.5'
+
+services:
+  postgres:
+    container_name: tabi_postgres
+    image: postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-212121}
+      PGDATA: /data/postgres
+    volumes:
+       - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - tabi
+    restart: unless-stopped
+  
+  pgadmin:
+    container_name: tabi_pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-admin}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-212121}
+    volumes:
+       - pgadmin:/root/.pgadmin
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    networks:
+      - tabi
+    restart: unless-stopped
+  
+  biserver:
+    container_name: tabi_biserver
+    build: ./biserver/
+    ports:
+      - "${BISERVER_PORT:-8080}:8080"
+    networks:
+      - tabi
+    restart: unless-stopped
+
+networks:
+  tabi:
+    driver: bridge
+
+volumes:
+    postgres:
+    pgadmin:
