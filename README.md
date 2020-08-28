@@ -75,7 +75,7 @@ pg_restore -Upostgres -d dvdrental /tmp/dvdrental.tar
 exit
 ```
 
-## Agregar Conexión
+## Crear Conexión
 - Entrar en pgadmin, navegar a localhost:5050
 - Entrar con las credenciales (admin/212121)
 - Agregar conexión a DvdRental recientemente restaurada
