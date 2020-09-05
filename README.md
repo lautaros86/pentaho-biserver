@@ -67,3 +67,24 @@ Segui los siguientes pasos para cargarla en nuestro stack:
 > docker exec -it tabi_postgres psql -Upostgres -c 'create database dvdrental' \
 > docker cp dvdrental.tar tabi_postgres:/tmp \
 > docker exec -it tabi_postgres pg_restore -Upostgres -d dvdrental /tmp/dvdrental.tar
+
+Nota: En caso que el último comando falle en windows: 
+```
+docker exec -it tabi_postgres 
+pg_restore -Upostgres -d dvdrental /tmp/dvdrental.tar
+exit
+```
+
+## Crear Conexión
+- Entrar en pgadmin, navegar a localhost:5050
+- Entrar con las credenciales (admin/212121)
+- Agregar conexión a DvdRental recientemente restaurada
+  - Ir a "add new server"
+  - En connection > hostname colocamos "postgres", username "postgres" y password "212121"
+  - Guardamos la conexión
+- Vamos a Schemas > public > Tables y deberían estar nuestra tablas
+- Realizamos alguna query simple para probar por medio de "Query Tool"
+
+<Tutorial [PostgresYa](https://www.tutorialesprogramacionya.com/postgresqlya/)>
+<Tutorial [PostgresTutorial](https://www.postgresqltutorial.com/)>
+
