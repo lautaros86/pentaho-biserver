@@ -85,6 +85,6 @@ exit
 - Vamos a Schemas > public > Tables y deberían estar nuestra tablas
 - Realizamos alguna query simple para probar por medio de "Query Tool"
 
-<Tutorial [PostgresYa](https://www.tutorialesprogramacionya.com/postgresqlya/)>
-<Tutorial [PostgresTutorial](https://www.postgresqltutorial.com/)>
+- Tutorial [PostgresYa](https://www.tutorialesprogramacionya.com/postgresqlya/)
+- Tutorial [PostgresTutorial](https://www.postgresqltutorial.com/)
 
