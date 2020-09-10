@@ -21,7 +21,7 @@ Requiere tener instalado:
 ## Ejecucion
 
 > clone https://github.com/TABI-UNLP/pentaho-biserver.git \
-> cd penthao-biserver  \
+> cd pentaho-biserver  \
 > docker-compose up -d
 
 ## Uso
