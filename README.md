@@ -69,10 +69,10 @@ Segui los siguientes pasos para cargarla en nuestro stack:
 Si el comando anterior falla, ejecutar paso a paso lo siguiente:
 
 > cd pentaho-biserver \
-> docker exec tabi_postgres psql -Upostgres -c "create database dvdrental"
-> docker cp dvdrental_v2.tar tabi_postgres:/
-> docker exec tabi_postgres pg_restore -Upostgres -d dvdrental  /dvdrental_v2.tar
-> docker exec tabi_postgres rm /dvdrental_v2.tar
+> docker exec tabi_postgres psql -Upostgres -c "create database dvdrental" \
+> docker cp dvdrental_v2.tar tabi_postgres:/ \
+> docker exec tabi_postgres pg_restore -Upostgres -d dvdrental  /dvdrental_v2.tar \
+> docker exec tabi_postgres rm /dvdrental_v2.tar \
 
 
 Nota: En caso que el último comando falle en windows: 
