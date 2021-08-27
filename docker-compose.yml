@@ -11,7 +11,7 @@ services:
     volumes:
        - postgres:/data/postgres
     ports:
-      - "5432:5432"
+      - "5433:5432"
     networks:
       - tabi
     restart: unless-stopped
@@ -20,7 +20,7 @@ services:
     container_name: tabi_pgadmin
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-admin}
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-admin@gmail.com}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-212121}
     volumes:
        - pgadmin:/root/.pgadmin
@@ -33,6 +33,7 @@ services:
   biserver:
     container_name: tabi_biserver
     build: ./biserver/
+    #image: dgraselli/pentaho-biserver:9.0
     ports:
       - "${BISERVER_PORT:-8080}:8080"
     networks:
