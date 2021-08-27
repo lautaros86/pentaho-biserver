@@ -64,9 +64,23 @@ En la materia vamos a trabajar con la base de datos [DVD Rental](https://www.pos
 Segui los siguientes pasos para cargarla en nuestro stack:
 
 > cd pentaho-biserver \
-> docker exec -it tabi_postgres psql -Upostgres -c 'create database dvdrental' \
-> docker cp dvdrental.tar tabi_postgres:/tmp \
-> docker exec -it tabi_postgres pg_restore -Upostgres -d dvdrental /tmp/dvdrental.tar
+> ./do_restore.sh
+
+Si el comando anterior falla, ejecutar paso a paso lo siguiente:
+
+> cd pentaho-biserver \
+> # Crea la base de datos
+> docker exec tabi_postgres psql -Upostgres -c "create database dvdrental"
+
+> # Copia el archivo al contenedor
+> docker cp dvdrental_v2.tar tabi_postgres:/
+
+> # Restore el backup
+> docker exec tabi_postgres pg_restore -Upostgres -d dvdrental  /dvdrental_v2.tar
+> 
+> # Borra el archivo del contenedor
+> docker exec tabi_postgres rm /dvdrental_v2.tar
+
 
 Nota: En caso que el último comando falle en windows: 
 ```
