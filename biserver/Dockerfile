@@ -1,5 +1,5 @@
-FROM java:8
-LABEL maintainer="dgraselli@gmail.ar"
+FROM openjdk:8
+LABEL maintainer="dgraselli@gmail.com"
 
 # Init ENV
 ENV BISERVER_VERSION 9.0
