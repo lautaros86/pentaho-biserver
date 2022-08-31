@@ -30,7 +30,7 @@ Requiere tener instalado:
   (admin/password)
 
   PGAdmin: http://localhost:5050
-  (admin/212121)
+  (admin@gmail.com/212121)
 
 Postgres SQL:
 
