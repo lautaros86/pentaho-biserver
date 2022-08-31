@@ -32,8 +32,8 @@ services:
   
   biserver:
     container_name: tabi_biserver
-    build: ./biserver/
-    #image: dgraselli/pentaho-biserver:9.0
+    #build: ./biserver/
+    image: dgraselli/pentaho-biserver:9.0
     ports:
       - "${BISERVER_PORT:-8080}:8080"
     networks:
