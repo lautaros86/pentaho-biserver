@@ -84,7 +84,7 @@ exit
 
 ## Crear Conexión
 - Entrar en pgadmin, navegar a localhost:5050
-- Entrar con las credenciales (admin/212121)
+- Entrar con las credenciales (admin@gmail.com/212121)
 - Agregar conexión a DvdRental recientemente restaurada
   - Ir a "add new server"
   - En connection > hostname colocamos "postgres", username "postgres" y password "212121"
