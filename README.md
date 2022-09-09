@@ -82,6 +82,19 @@ pg_restore -Upostgres -d dvdrental /tmp/dvdrental.tar
 exit
 ```
 
+## Carga mysql dump
+
+- acceder a phpMyAdmin localhost:8081 (user: root / password: password)
+- Crear la bbdd deseada
+- En la terminal ejecutar:
+ 
+```
+docker exec -i tabi_mariadb sh -c 'exec mysql -uroot -p"password" ${nuestraDB}' < /path/to/dump/dump.sql
+```
+Ahora deberiamos ver la base cargada en phpMyAdmin
+
+
+
 ## Crear Conexión
 - Entrar en pgadmin, navegar a localhost:5050
 - Entrar con las credenciales (admin@gmail.com/212121)

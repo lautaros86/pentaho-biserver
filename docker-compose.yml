@@ -1,6 +1,30 @@
 version: '3.5'
 
 services:
+  mariadb:
+    container_name: tabi_mariadb
+    image: mariadb
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - /data/mariadb
+    networks:
+      - tabi
+    ports:
+      - "3306:3306"
+
+  phpmyadmin:
+    container_name: tabi_phpmyadmin
+    image: phpmyadmin
+    restart: unless-stopped
+    environment:
+      - PMA_ARBITRARY=1
+    ports:
+      - "8081:80"
+    networks:
+      - tabi
+
   postgres:
     container_name: tabi_postgres
     image: postgres
@@ -47,3 +71,4 @@ networks:
 volumes:
     postgres:
     pgadmin:
+    mariadb:
