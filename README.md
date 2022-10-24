@@ -84,7 +84,7 @@ exit
 
 ## Carga mysql dump
 
-- acceder a phpMyAdmin localhost:8081 (user: root / password: password)
+- acceder a phpMyAdmin localhost:8081 (host: mariadb / user: root / password: password)
 - Crear la bbdd deseada
 - En la terminal ejecutar:
  
